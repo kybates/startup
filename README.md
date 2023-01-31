@@ -33,3 +33,8 @@ Are you tired of looking up the same recipe everytime you want to use it or endl
 - Capacity to organize recipes by groups
 - Ability to share recipes with friends
 - Capacity to edit recipes after they are initially added
+
+## AWS
+IP address: http://3.136.128.254/
+
+To access from the console: `➜  ssh -i [key pair file] ubuntu@[ip address]`
