@@ -38,3 +38,12 @@ Are you tired of looking up the same recipe everytime you want to use it or endl
 IP address: http://3.136.128.254/
 
 To access from the console: `➜  ssh -i [key pair file] ubuntu@[ip address]`
+
+## DNS
+To find an IP address for any domain: `dig [domain name]`
+
+To get information about a domain name: `whois [domain name]`
+
+An `address` or `A` record mapgs a domain name directly to an IP address
+
+A `canonical name` or `CNAME` maps one domain name to anotehr domain name
