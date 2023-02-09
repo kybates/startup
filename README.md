@@ -62,4 +62,4 @@ A `canonical name` or `CNAME` maps one domain name to anotehr domain name
 `readonly` - is an attribute that makes it so the user cannot input something in the text box 
 
 #### General things I learned
-When typing an `=` after attributes, VS code automatically fills in the `""` that must follow. Elements *usually* have a separate opening tag and a closing tag, however you can open and close the element with one tag when the element only includes attributes and you don't want text inside the element. Ex: `<path insert-attributes here/>`. 
+When typing an `=` after attributes, VS code automatically fills in the `""` that must follow. Elements that only contain attributes and don't include any text can be opened and closed with only one tag. Ex: `<path insert-attributes here/>`. 
