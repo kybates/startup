@@ -47,3 +47,19 @@ To get information about a domain name: `whois [domain name]`
 An `address` or `A` record mapgs a domain name directly to an IP address
 
 A `canonical name` or `CNAME` maps one domain name to anotehr domain name
+
+## HTML
+
+### Things I learned from Simon html
+`<thead>` - table header
+
+`<th>` - columns names in the table header
+
+`<hr />` - html design element that adds a line
+
+`<menu>` - an input alternate to unordered lists
+
+`readonly` - is an attribute that makes it so the user cannot input something in the text box 
+
+#### General things I learned
+When typing an `=` after attributes, VS code automatically fills in the `""` that must follow. Elements *usually* have a separate opening tag and a closing tag, however you can open and close the element with one tag when the element only includes attributes and you don't want text inside the element. Ex: `<path insert-attributes here/>`. 
