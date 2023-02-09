@@ -59,7 +59,11 @@ A `canonical name` or `CNAME` maps one domain name to anotehr domain name
 
 `<menu>` - an input alternate to unordered lists
 
-`readonly` - is an attribute that makes it so the user cannot input something in the text box 
+`readonly` - an attribute that makes it so the user cannot input something in the text box 
+
+`charset` - specifies character encoding
+
+`UTF-8` - a character coding system
 
 #### General things I learned
 When typing an `=` after attributes, VS code automatically fills in the `""` that must follow. Elements that only contain attributes and don't include any text can be opened and closed with only one tag. Ex: `<path insert-attributes here/>`. 
