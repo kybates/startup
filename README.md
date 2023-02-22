@@ -67,3 +67,27 @@ A `canonical name` or `CNAME` maps one domain name to anotehr domain name
 
 #### General things I learned
 When typing an `=` after attributes, VS code automatically fills in the `""` that must follow. Elements that only contain attributes and don't include any text can be opened and closed with only one tag. Ex: `<path insert-attributes here/>`. 
+
+## CSS
+
+### Things I learned from Simon CSS
+
+`!important` - overrides the default bootstrap property
+
+`rgb()`, `#`, and `color name` - can all be used when selecting colors (for rgb, red comes first, then green, then blue)
+
+`border-radius` - 50% makes a circle, you can adjust this to make semi circles, quarter circles, etc.
+
+### Bootstrap classes
+
+`container-fluid` - makes a container with the width of the viewport
+
+`navbar fixed-top` - navigation bar that is fixed at the top of the screen
+
+`navbar-brand` - specifically for the "brand" or website name 
+
+`nav-link active` - changes the link of the current page to show that it is the page currently being used
+
+#### General things I learned
+
+You can give an element more than one class to be able to apply several CSS effects to that element. Ex: `<div class="controls center"></div>`. This is also true for Boostrap. Ex: `<nav class="navbar fixed-top navbar-dark">`. It's a lot easier to use bootstrap to create images rather than using HTML to create SVGs. 
