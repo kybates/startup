@@ -9,13 +9,32 @@ header {
     background: #1D658D;
 }
 
-main {
-    flex: 1 calc(100vh - 110px);
+.welcome {
+    flex: 1 calc(100vh - 10px);
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    background: white;
     justify-content: space-around;
+} 
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(12rem, 0.5fr));
+    grid-auto-rows: repeat(auto-fill);
+    grid-gap: 1em;
+    padding: 3rem;
+}
+
+.search {
+    padding-top: 3rem;
+    flex: 1 calc(100vh - 10px);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.search-button {
+    padding-left: 3em;
 }
 
 footer {
