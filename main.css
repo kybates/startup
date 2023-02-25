@@ -76,7 +76,7 @@ img {
     justify-content: space-around;
 } 
 
-.card-container {
+.recipe-card-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(13rem, 0.5fr));
     grid-auto-rows: repeat(auto-fill);
@@ -89,6 +89,27 @@ img {
     padding-top: 3rem;
     padding-bottom: 2rem;
     padding-left: 1rem;
+}
+
+.card-header button {
+    display: inline-block;
+}
+
+.card-header h3 {
+    display: inline-block;
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(30rem, 0.5fr));
+    grid-auto-rows: repeat(auto-fill);
+    grid-gap: 1em;
+    padding: 1rem;
+    justify-content: center;
+}
+
+h2 {
+    padding-top: 1rem;
 }
 
 @media (max-height: 600px) {
