@@ -69,6 +69,14 @@ img {
     justify-content: space-around;
 } 
 
+.about-container {
+    flex: 1 calc(100vh - 10px);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+} 
+
 .recipe-card-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(13rem, 0.5fr));
@@ -85,7 +93,7 @@ img {
 }
 
 .card-header button {
-    display: inline-block;
+    display: inline;
     float: right;
 }
 
