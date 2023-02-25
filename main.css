@@ -10,12 +10,13 @@ header {
 
 footer {
     flex: 0 30px;
-    background: white;
+    background-color: white;
 }
 
 nav {
     background-color: #1D658D;
 }
+
 
 menu {
     flex: 1;
@@ -27,6 +28,7 @@ menu {
 .navbar-brand {
     padding-left: 0.3em;
     font-size: 40px !important;
+    font-family: 'Kaushan Script';
 }
 
 menu .nav-item {
@@ -45,27 +47,14 @@ main {
     justify-content: center;
 }
 
-.table {
-    width: 500px;
-}
-
-.table-container {
-    flex: 1 calc(100vh - 10px);
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-    width: 300px;
-}
-
 img {
     object-fit: cover;
     width: 230px;
     height: 230px;
   }
 
-.card-header button {
-    float:right;
+.card-header .left-button {
+    float: right;
 }
 
 .margin-left {
@@ -97,10 +86,15 @@ img {
 
 .card-header button {
     display: inline-block;
+    float: right;
 }
 
-.card-header h3 {
+.card-header h2 {
     display: inline-block;
+}
+
+.recipe-name-container {
+    padding: 2rem !important;
 }
 
 .card-container {
@@ -108,8 +102,8 @@ img {
     grid-template-columns: repeat(auto-fill, minmax(30rem, 0.5fr));
     grid-auto-rows: repeat(auto-fill);
     grid-gap: 1em;
-    padding: 1rem;
     justify-content: center;
+    padding-top: 2rem;
 }
 
 h2 {
