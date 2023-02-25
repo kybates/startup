@@ -91,3 +91,27 @@ When typing an `=` after attributes, VS code automatically fills in the `""` tha
 #### General things I learned
 
 You can give an element more than one class to be able to apply several CSS effects to that element. Ex: `<div class="controls center"></div>`. This is also true for Boostrap. Ex: `<nav class="navbar fixed-top navbar-dark">`. It's a lot easier to use bootstrap to create images rather than using HTML to create SVGs. 
+
+## Things I learned from Startup HTML/CSS
+
+Cards can be made into buttons using the following code: `<a class="card-block stretched-link text-decoration-none text-dark" href="add.html">`
+
+Buttons can be icons: `<button class="btn btn-secondary material-symbols-outlined margin-left left-button">share</button>`
+
+For unordered lists you can use `list-style: none` to get rid of bullet points.
+
+You can force images to have certain dimensions.
+
+Ex:
+
+  ```
+  img {
+    object-fit: cover;
+    width: 230px;
+    height: 230px;
+  }
+  ```
+
+### General things I learned:
+
+You can create classes for elements just to apply specific effects and then use them for a variety of elements that you all want to have the same rules/look. VS code will yell at you for creating "empty rulesets" but this does not mean the class/element your trying to apply rules to doesn't exist. It's just waiting for you to actually type in rules and then it stops yelling at you. It helps to work on each of the html files one at a time (and to not procrastinate) because it can be a lot of code and different pages, and it can get confusing. 
