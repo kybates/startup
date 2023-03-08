@@ -115,3 +115,31 @@ Ex:
 ### General things I learned:
 
 You can create classes for elements just to apply specific effects and then use them for a variety of elements that you all want to have the same rules/look. VS code will yell at you for creating "empty rulesets" but this does not mean the class/element your trying to apply rules to doesn't exist. It's just waiting for you to actually type in rules and then it stops yelling at you. It helps to work on each of the html files one at a time (and to not procrastinate) because it can be a lot of code and different pages, and it can get confusing. 
+
+## Things I learned from Simon Javascript:
+
+`localStorage` - access local storage
+
+`.getItem` - retrieve an item from local storage
+
+`.setItem` - create an item in local storage
+
+`window.location.href` - returns the URL of the current page
+
+`document.querySelector('#id')` - select elements by id
+
+`document.querySelectorAll('.class')` - select elements by class
+
+`element.appendChild(child)` - add a child element to a parent
+
+`innerHTML` - sets the inner html of an element
+
+`document.createElement()` - creates elements
+
+`sequence.length` - returns length of a sequence
+
+`??` - if the item you're trying to get doesn't exist use the following string Ex:`return localStorage.getItem('userName') ?? 'Mystery player';`
+
+### General things I learned:
+
+Javascript booleans are ALL lower case (`true` and `false`). If you capitalize them, they are not recognized as booleans. `id`s's in HTML are important for both CSS and Javascript. They help when you want to select a specific element for DOM. `<script>` must come at the end of an html if the Javascript references elements or IDs. 
