@@ -47,11 +47,11 @@
         <main>
             <div class="container-fluid recipe-name-container">
                 <div class="card">
-                    <div class="card-header">
+                    <div class="card-header" id="recipeName">
                         <form method="get">
-                            <h2>Recipe name</h2>
-                            <button class="btn btn-secondary material-symbols-outlined">
-                                edit
+                            <input type="text" id="text-input" placeholder="Recipe name"/>
+                            <button class="btn btn-secondary material-symbols-outlined" onclick="addRecipeName()">
+                                add
                             </button>
                         </form>
                     </div>
@@ -66,7 +66,7 @@
                                 <li>
                                     <form method="get">
                                         <input type="text" placeholder="Add an ingredient here"/>
-                                        <button class="btn btn-secondary material-symbols-outlined">
+                                        <button class="btn btn-secondary material-symbols-outlined" onclick="addIngredients()">
                                         add
                                         </button>
                                     </form>
@@ -81,7 +81,7 @@
                                     <li>
                                         <form method="get">
                                             <input type="text" placeholder="Add a step here" />
-                                            <button class="btn btn-secondary material-symbols-outlined">
+                                            <button class="btn btn-secondary material-symbols-outlined" onclick="addDirections()">
                                             add
                                             </button>
                                         </form>
@@ -101,5 +101,6 @@
             </div>
         </footer>
 
+        <script src="add.js"></script>
     </body>
 </html>
