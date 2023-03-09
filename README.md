@@ -1,4 +1,33 @@
 # startup
+## Console
+
+- echo - Output the parameters of the command
+- cd - Change directory
+- mkdir - Make directory
+- rmdir - Remove directory
+- rm - Remove file(s)
+- mv - Move file(s)
+- cp - Copy files
+- ls - List files
+- curl - Command line client URL browser
+- grep - Regular expression search
+- find - Find files
+- top - View running processes with CPU and memory usage
+- df - View disk statistics
+- cat - Output the contents of a file
+- less - Interactively output the contents of a file
+- wc - Count the words in a file
+- ps - View the currently running processes
+- kill - Kill a currently running process
+- sudo - Execute a command as a super user (admin)
+- ssh - Create a secure shell on a remote computer
+- scp - Securely copy files to a remote computer
+- history - Show the history of commands
+- ping - Check if a website is up
+- tracert - Trace the connections to a website
+- dig - Show the DNS information for a domain
+- man - Look up a command in the manual
+
 ## Development environment
 
 To create a repository: `git init` (it is easier to create repositories in GitHub and then clone it to development environment)
@@ -46,7 +75,7 @@ To get information about a domain name: `whois [domain name]`
 
 An `address` or `A` record mapgs a domain name directly to an IP address
 
-A `canonical name` or `CNAME` maps one domain name to anotehr domain name
+A `canonical name` or `CNAME` maps one domain name to another domain name
 
 ## HTML
 
@@ -77,6 +106,78 @@ When typing an `=` after attributes, VS code automatically fills in the `""` tha
 `rgb()`, `#`, and `color name` - can all be used when selecting colors (for rgb, red comes first, then green, then blue)
 
 `border-radius` - 50% makes a circle, you can adjust this to make semi circles, quarter circles, etc.
+
+Image
+  ```
+  <img
+    alt="mountain landscape"
+    src="https://images.pexels.com/photos/164170/pexels-photo-164170.jpeg"
+  />
+  ```
+
+Audio
+`<audio controls src="testAudio.mp3"></audio>`
+
+Video
+  ```
+  <video controls width="300" crossorigin="anonymous">
+    <source
+      src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+    />
+  </video>
+  ```
+
+Associate html with css - `<link rel="stylesheet" href="styles.css" />`
+
+##### Import fonts
+
+  ```
+  @import url('https://fonts.googleapis.com/css2?family=Rubik Microbe&display=swap');
+
+  p {
+    font-family: 'Rubik Microbe';
+  }
+  ```
+  
+##### Animations
+
+  ```
+  p {
+    text-align: center;
+    font-size: 20vh;
+
+    animation-name: demo;
+    animation-duration: 3s;
+  }
+  
+  @keyframes demo {
+    from {
+      font-size: 0vh;
+    }
+
+    to {
+      font-size: 20vh;
+    }
+  }
+  ```
+
+#### Selectors
+
+Descendant - `body section`
+
+Child - `section > p`
+
+General sibling - `p ~ div`
+
+Adjacent sibling - `p + div`
+
+ID selector - `#id`
+
+Class selector - `.class`
+
+Pseudo selector - ex: `section:hover {
+  border-left: solid 1em purple;
+}`
 
 ### Bootstrap classes
 
@@ -140,6 +241,132 @@ You can create classes for elements just to apply specific effects and then use 
 
 `??` - if the item you're trying to get doesn't exist use the following string Ex:`return localStorage.getItem('userName') ?? 'Mystery player';`
 
+#### Javascript data types
+| Type       | Use                                                                                    | Example                  |
+| ---------- | -------------------------------------------------------------------------------------- | ------------------------ |
+| `Object`   | A collection of properties represented by name value pairs. Values can be of any type. | `{a:3, b:'fish'}`        |
+| `Function` | An object that has the ability to be called.                                           | `function a() {}`        |
+| `Date`     | Calendar dates and times.                                                              | `new Date('1995-12-17')` |
+| `Array`    | An ordered sequence of any type.                                                       | `[3, 'fish']`            |
+| `Map`      | A collection of key value pairs that support efficient lookups.                        | `new Map()`              |
+| `JSON`     | A lightweight data-interchange format used to share information across programs.       | `{"a":3, "b":"fish"}`    |
+
+#### Conditionals
+
+JavaScript supports many common programming language conditional constructs. This includes `if`, `else`, and `if else`. Here are some examples.
+
+```js
+if (a === 1) {
+  //...
+} else if (b === 2) {
+  //...
+} else {
+  //...
+}
+```
+
+#### Loops
+
+##### For
+
+```js
+for (let i = 0; i < 2; i++) {
+  console.log(i);
+}
+// OUTPUT: 0 1
+```
+
+##### do while
+
+```js
+let i = 0;
+do {
+  console.log(i);
+  i++;
+} while (i < 2);
+// OUTPUT: 0 1
+```
+
+##### while
+
+```js
+let i = 0;
+while (i < 2) {
+  console.log(i);
+  i++;
+}
+// OUTPUT: 0 1
+```
+
+##### for in
+
+The `for in` statement iterates over an object's property names.
+
+```js
+const obj = { a: 1, b: 'fish' };
+for (const name in obj) {
+  console.log(name);
+}
+// OUTPUT: a
+// OUTPUT: b
+```
+
+For arrays the object's name is the array index.
+
+```js
+const arr = ['a', 'b'];
+for (const name in arr) {
+  console.log(name);
+}
+// OUTPUT: 0
+// OUTPUT: 1
+```
+
+##### for of
+
+The `for of` statement iterates over an iterable's (Array, Map, Set, ...) property values.
+
+```js
+const arr = ['a', 'b'];
+for (const val of arr) {
+  console.log(val);
+}
+// OUTPUT: 'a'
+// OUTPUT: 'b'
+```
+
+#### Array functions
+
+| Function | Meaning                                                   | Example                       |
+| -------- | --------------------------------------------------------- | ----------------------------- |
+| push     | Add an item to the end of the array                       | `a.push(4)`                   |
+| pop      | Remove an item from the end of the array                  | `x = a.pop`                   |
+| slice    | Return a sub-array                                        | `a.slice(1,-1)`               |
+| sort     | Run a function sort an array in place                     | `a.sort((a,b) => b-a)`        |
+| values   | Creates an iterator for use with a `for of` loop          | `for (i of a.values()) {...}` |
+| find     | Find the first item satisfied by a test function          | `a.find(i => i < 2)`          |
+| forEach  | Run a function on each array item                         | `a.forEach(console.log)`      |
+| reduce   | Run a function to reduce each array item to a single item | `a.reduce((a, c) => a + c)`   |
+| map      | Run a function to map an array to a new array             | `a.map(i => i+i)`             |
+| filter   | Run a function to remove items                            | `a.filter(i => i%2)`          |
+| every    | Run a function to test if all items match                 | `a.every(i => i < 3)`         |
+| some     | Run a function to test if any items match                 | `a.some(i => 1 < 1)`          |
+
 ### General things I learned:
 
 Javascript booleans are ALL lower case (`true` and `false`). If you capitalize them, they are not recognized as booleans. `id`s's in HTML are important for both CSS and Javascript. They help when you want to select a specific element for DOM. `<script>` must come at the end of an html if the Javascript references elements or IDs. 
+
+### JSON to Javascript:
+
+```
+const obj = { a: 2, b: 'crockford', c: undefined };
+const json = JSON.stringify(obj);
+const objFromJson = JSON.parse(json);
+
+console.log(obj, json, objFromJson);
+
+// OUTPUT:
+// {a: 2, b: 'crockford', c: undefined}
+// {"a":2, "b":"crockford"}
+// {a: 2, b: 'crockford'}
+```
