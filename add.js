@@ -1,3 +1,5 @@
+const { doc } = require("prettier");
+
 function addRecipeName() {
     const recipeNameEl = document.querySelector('#recipeName');
     const recipeName = document.getElementById('name-input').value;
@@ -7,15 +9,32 @@ function addRecipeName() {
 function addIngredients() {
     const ingredientsEl = document.querySelector('#ingredientsCard');
     const ingredients = document.getElementById('ingredients-input').value;
-    ingredientsEl.innerHTML = `<div><ul><li>${ingredients}</li></ul></div>`;
+    const ingredientsArr = ingredients.split(/\r?\n/);
+    ingredientsEl.innerHTML = `<ul list-style-type="none" id="ingredients"></ul>`;
+
+    for (const i of ingredientsArr) {
+        const ingredientsUl = document.getElementById('ingredients');
+        const newIngredient = document.createElement('li');
+        newIngredient.textContent = i;
+        
+        ingredientsUl.appendChild(newIngredient);
+    }
 }
 
 function addDirections() {
     const directionsEl = document.querySelector('#directionsCard');
     const directions = document.getElementById('directions-input').value;
-    directionsEl.innerHTML = `<div><ol><li>${directions}<li></ol></div>`;
-}
+    const directionsArr = directions.split(/\r?\n/);
+    directionsEl.innerHTML = `<ol id="directions"></ol>`;
 
+    for (const i of directionsArr) {
+        const directionsOl = document.getElementById('directions');
+        const newStep = document.createElement('li');
+        newStep.textContent = i;
+
+        directionsOl.appendChild(newStep)
+    }
+}
 function createRecipe() {
 
 }
