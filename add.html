@@ -49,7 +49,7 @@
                 <div class="card">
                     <div class="card-header" id="recipeName">
                         <form method="get">
-                            <input type= "text" id="text-input" placeholder="Recipe name"/>
+                            <input type="text" id="name-input" placeholder="Recipe name"/>
                             <div>
                                 <button class="btn btn-secondary material-symbols-outlined add" onclick="addRecipeName()">
                                     add
@@ -59,11 +59,13 @@
                     </div>
                 </div>
                 <div class="card-container">
-                    <div class="card ingredientsCard">
+
+
+                    <div class="card">
                         <div class="card-header"><h3>Ingredients</h3></div>
-                        <div class="card-body">
+                        <div class="card-body" id="ingredientsCard">
                             <form method="get">
-                                <textarea class="form-control" placeholder="Add your ingredients here"></textarea>
+                                <textarea class="form-control" id="ingredients-input" placeholder="Add your ingredients here"></textarea>
                                 <div>
                                     <button class="btn btn-secondary material-symbols-outlined add" onclick="addIngredients()">
                                         add
@@ -72,17 +74,21 @@
                             </form>
                         </div>
                     </div>
+
+
                     <div class="card">
                         <div class="card-header"><h3>Directions</h3></div>
-                        <div class="card-body">
+                        <div class="card-body" id="directionsCard">
                             <form method="get">
-                                <textarea class="form-control" placeholder="Add steps here"></textarea>
+                                <textarea class="form-control" id="directions-input" placeholder="Add steps here"></textarea>
                                 <button class="btn btn-secondary material-symbols-outlined add" onclick="addDirections()">
                                     add
                                 </button>
                             </form>
                         </div>
                     </div>
+
+
                 </div>
             </div>
         </main>

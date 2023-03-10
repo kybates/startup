@@ -9,7 +9,7 @@ function search_recipe() {
             y[i].style.display="none";
         }
         else {
-            y[i].style.display="content";                 
+            y[i].style.display="grid";                 
         }
     }
 }

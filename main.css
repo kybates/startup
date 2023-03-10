@@ -100,13 +100,9 @@ button.add {
 /* Search bar CSS */
 #searchbar{
     padding: 10px;
-	border-radius: 10px;
+	border-radius: 4px;
     min-width: 400px;
     max-height: 2.5rem;
-}
-
-.recipe-card {
-    display: content;
 }
 
 .card-header h2 {
