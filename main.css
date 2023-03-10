@@ -92,9 +92,21 @@ img {
     padding-left: 1rem;
 }
 
-.card-header button {
-    display: inline;
+button.add {
     float: right;
+    margin-top: 1rem
+}
+
+/* Search bar CSS */
+#searchbar{
+    padding: 10px;
+	border-radius: 10px;
+    min-width: 400px;
+    max-height: 2.5rem;
+}
+
+.recipe-card {
+    display: content;
 }
 
 .card-header h2 {

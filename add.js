@@ -5,7 +5,9 @@ function addRecipeName() {
 }
 
 function addIngredients() {
-
+    const ingredientsEl = document.querySelector('#ingredientsCard');
+    const recipeName = document.getElementById('text-input').value;
+    ingredientsEl.innerHTML = `<h2>${recipeName}</h2>`;
 }
 
 function addDirections() {

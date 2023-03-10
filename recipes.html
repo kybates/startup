@@ -45,8 +45,7 @@
 
         <main class="container-fluid">
             <div class="search">
-                <input type="text" placeholder="Search a recipe name" />
-                <button type="submit" class="btn btn-secondary search-button">Search</button>
+                <input type="text" id="searchbar" placeholder="Search a recipe name" onkeyup="search_recipe()"/>
             </div>
             <div class="recipe-card-container">
                 <div class="card">
@@ -58,29 +57,29 @@
                         </div>
                     </a>
                 </div>
-                <div class="card">
+                <div class="card recipe-card">
                     <a class="card-block stretched-link text-decoration-none text-dark" href="recipe1.html">
                         <img src="cookie_picture.png" class="card-img-top" alt="...">
                         <div class="card-body">
-                        <h5 class="card-title">Chocolate Chip Cookies</h5>
+                        <h5 class="card-title recipe-title">Chocolate Chip Cookies</h5>
                         <p class="card-text">Basic chocolate chip cookie recipe</p>
                         </div>
                     </a>
                 </div>
-                <div class="card">
+                <div class="card recipe-card">
                     <a class="card-block stretched-link text-decoration-none text-dark" href>
                         <img src="veggies.png" class="card-img-top" alt="...">
                         <div class="card-body">
-                        <h5 class="card-title">Recipe 2</h5>
+                        <h5 class="card-title recipe-title">Recipe 2</h5>
                         <p class="card-text">A brief explanation of recipe 2 will go here.</p>
                         </div>
                     </a>
                 </div>
-                <div class="card">
+                <div class="card recipe-card">
                     <a class="card-block stretched-link text-decoration-none text-dark" href>
                         <img src="pasta.png" class="card-img-top" alt="...">
                         <div class="card-body">
-                        <h5 class="card-title">Recipe 3</h5>
+                        <h5 class="card-title recipe-title">Recipe 3</h5>
                         <p class="card-text">A brief explanation of recipe 3 will go here.</p>
                         </div>
                     </a>
@@ -96,5 +95,6 @@
             </div>
         </footer>
 
+        <script src="search.js"></script>
     </body>
 </html>

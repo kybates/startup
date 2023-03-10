@@ -49,45 +49,38 @@
                 <div class="card">
                     <div class="card-header" id="recipeName">
                         <form method="get">
-                            <input type="text" id="text-input" placeholder="Recipe name"/>
-                            <button class="btn btn-secondary material-symbols-outlined" onclick="addRecipeName()">
-                                add
-                            </button>
+                            <input type= "text" id="text-input" placeholder="Recipe name"/>
+                            <div>
+                                <button class="btn btn-secondary material-symbols-outlined add" onclick="addRecipeName()">
+                                    add
+                                </button>
+                            </div>
                         </form>
                     </div>
                 </div>
                 <div class="card-container">
-                    <div class="card">
-                        <div class="card-header">
-                            <h3>Ingredients</h3>
-                        </div>
+                    <div class="card ingredientsCard">
+                        <div class="card-header"><h3>Ingredients</h3></div>
                         <div class="card-body">
-                            <ul style="list-style: none;">
-                                <li>
-                                    <form method="get">
-                                        <input type="text" placeholder="Add an ingredient here"/>
-                                        <button class="btn btn-secondary material-symbols-outlined" onclick="addIngredients()">
+                            <form method="get">
+                                <textarea class="form-control" placeholder="Add your ingredients here"></textarea>
+                                <div>
+                                    <button class="btn btn-secondary material-symbols-outlined add" onclick="addIngredients()">
                                         add
-                                        </button>
-                                    </form>
-                                </li>
-                            </div>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
                     </div>
                     <div class="card">
                         <div class="card-header"><h3>Directions</h3></div>
                         <div class="card-body">
-                            <div>
-                                <ol>
-                                    <li>
-                                        <form method="get">
-                                            <input type="text" placeholder="Add a step here" />
-                                            <button class="btn btn-secondary material-symbols-outlined" onclick="addDirections()">
-                                            add
-                                            </button>
-                                        </form>
-                                    </li>
-                                </ol>
-                            </div>
+                            <form method="get">
+                                <textarea class="form-control" placeholder="Add steps here"></textarea>
+                                <button class="btn btn-secondary material-symbols-outlined add" onclick="addDirections()">
+                                    add
+                                </button>
+                            </form>
                         </div>
                     </div>
                 </div>
