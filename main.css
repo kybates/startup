@@ -53,10 +53,6 @@ img {
     height: 230px;
   }
 
-.card-header .left-button {
-    float: right;
-}
-
 .margin-left {
     margin-left: 10px !important;
 }
@@ -86,18 +82,13 @@ img {
     justify-content: center;
 }
 
-.search {
-    padding-top: 3rem;
-    padding-bottom: 2rem;
-    padding-left: 1rem;
-}
-
-button.add {
-    float: right;
-    margin-top: 1rem
-}
-
 /* Search bar CSS */
+.search {
+    padding-top: 2rem;
+    padding-left: 1rem;
+    max-width: 465px;
+}
+
 #searchbar{
     padding: 10px;
 	border-radius: 4px;
@@ -105,12 +96,41 @@ button.add {
     max-height: 2.5rem;
 }
 
-.card-header h2 {
+/* Add page css */
+button.add {
+    float: right;
+    margin-top: 1rem
+}
+
+.add-header {
     display: inline-block;
+    padding: 1rem !important;
+}
+
+.recipe-body {
+    padding-bottom: 0% !important;
 }
 
 .recipe-name-container {
-    padding: 2rem !important;
+    padding-top: 2rem !important;
+}
+
+#name-input {
+    min-height: 50px;
+    border-radius: 4px;
+    font-size: 26px;
+}
+
+#ingredients-input {
+    min-height: 200px;
+}
+
+#directions-input {
+    min-height: 200px;
+}
+
+#add-button {
+    display: inline-block;
 }
 
 .card-container {
@@ -124,6 +144,10 @@ button.add {
 
 h2 {
     padding-top: 1rem;
+}
+
+button .left-button {
+    float: inline-end;
 }
 
 @media (max-height: 600px) {

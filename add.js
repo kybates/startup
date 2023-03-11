@@ -1,9 +1,13 @@
-const { doc } = require("prettier");
-
 function addRecipeName() {
     const recipeNameEl = document.querySelector('#recipeName');
     const recipeName = document.getElementById('name-input').value;
     recipeNameEl.innerHTML = `<h2>${recipeName}</h2>`;
+}
+
+function addDescription() {
+    const descriptionEl = document.querySelector('#recipe-description');
+    const description = document.getElementById('description-input').value;
+    descriptionEl.innerHTML = `<p>${description}</p>`;
 }
 
 function addIngredients() {
@@ -35,6 +39,50 @@ function addDirections() {
         directionsOl.appendChild(newStep)
     }
 }
-function createRecipe() {
 
+function insertCard() {
+    const recipeName = document.getElementById('name-input').value;
+    const description = document.getElementById('description-input').value;
+    const newChild = document.createElement('div');
+    newChild.innerHTML = `<div class="card">
+    <a class="card-block stretched-link text-decoration-none text-dark" href="add.html">
+        <img src="add.png" class="card-img-top" alt="...">
+        <div class="card-body">
+        <h5 class="card-title">${recipeName}</h5>
+        <p class="card-text">${description}</p>
+        </div>
+    </a>
+    </div>`;
+  
+    const parentElement = document.querySelector("recipe-card-container");
+    parentElement.appendChild(newChild);
+  }
+  
+// This function will be created and implemented after we cover the necessary skills in class.
+// For now it just adds a recipe card to the 'My recipes' page.
+// It also changes the add recipe page itself, but doesn't add a recipe to the person's account.
+function addRecipe() {
+    addRecipeName();
+    addDescription();
+    addIngredients();
+    addDirections();
+    insertCard();
+}
+
+
+// Search bar functionality
+function search_recipe() {
+    let input = document.getElementById('searchbar').value
+    input=input.toLowerCase();
+    let x = document.getElementsByClassName('recipe-title');
+    let y = document.getElementsByClassName('recipe-card');
+      
+    for (i = 0; i < x.length; i++) { 
+        if (!x[i].innerHTML.toLowerCase().includes(input)) {
+            y[i].style.display="none";
+        }
+        else {
+            y[i].style.display="grid";                 
+        }
+    }
 }

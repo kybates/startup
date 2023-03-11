@@ -47,15 +47,18 @@
         <main>
             <div class="container-fluid recipe-name-container">
                 <div class="card">
-                    <div class="card-header" id="recipeName">
+                    <div class="card-header add-header" id="recipeName">
                         <form method="get">
-                            <input type="text" id="name-input" placeholder="Recipe name"/>
-                            <div>
+                            <input type="text" class="form-control" id="name-input" placeholder="Recipe name"/>
+                            <!-- <div>
                                 <button class="btn btn-secondary material-symbols-outlined add" onclick="addRecipeName()">
                                     add
                                 </button>
-                            </div>
+                            </div> -->
                         </form>
+                    </div>
+                    <div class="card-body" id="recipe-description">
+                        <input type="text" class="form-control" id="description-input" placeholder="Write a brief description of your recipe here."/>
                     </div>
                 </div>
                 <div class="card-container">
@@ -65,12 +68,13 @@
                         <div class="card-header"><h3>Ingredients</h3></div>
                         <div class="card-body" id="ingredientsCard">
                             <form method="get">
-                                <textarea class="form-control" id="ingredients-input" placeholder="Add your ingredients here"></textarea>
-                                <div>
+                                <textarea class="form-control" id="ingredients-input" 
+                                placeholder="Add ingredients here.&#10;Place each ingredient on a separate line."></textarea>
+                                <!-- <div>
                                     <button class="btn btn-secondary material-symbols-outlined add" onclick="addIngredients()">
                                         add
                                     </button>
-                                </div>
+                                </div> -->
                             </form>
                         </div>
                     </div>
@@ -80,12 +84,17 @@
                         <div class="card-header"><h3>Directions</h3></div>
                         <div class="card-body" id="directionsCard">
                             <form method="get">
-                                <textarea class="form-control" id="directions-input" placeholder="Add steps here"></textarea>
-                                <button class="btn btn-secondary material-symbols-outlined add" onclick="addDirections()">
+                                <textarea class="form-control" id="directions-input"
+                                placeholder="Add steps here.&#10;Place each step on a separate line.&#10;Do not include the number of each step."></textarea>
+                                <!-- <button class="btn btn-secondary material-symbols-outlined add" onclick="addDirections()">
                                     add
-                                </button>
+                                </button> -->
                             </form>
                         </div>
+                    </div>
+
+                    <div>
+                        <button class="btn btn-secondary" id="add-button" onclick="addRecipe()">Add recipe to cookbook!</button>
                     </div>
 
 
