@@ -49,14 +49,14 @@
         <main>
             <div class="container-fluid recipe-name-container">
                 <div class="card">
-                    <div class="card-header">
+                    <div class="card-header" id="recipe1-name">
                         <h2>Chocolate Chip Cookies</h2>
-                        <button class="btn btn-secondary material-symbols-outlined margin-left left-button">
+                        <!-- <button class="btn btn-secondary material-symbols-outlined margin-left left-button">
                             share
                         </button>
-                        <button class="btn btn-secondary material-symbols-outlined margin-left left-button">
+                        <button class="btn btn-secondary material-symbols-outlined margin-left left-button" id="edit-button" onclick="editRecipe()">
                             edit
-                        </button>
+                        </button> -->
                     </div>
                     <div class="card-body recipe-body" id="recipe1-description">
                         <p>Basic chocolate chip recipe</p>
@@ -67,7 +67,7 @@
                         <div class="card-header">
                             <h3>Ingredients</h3>
                         </div>
-                        <div class="card-body recipe-body">
+                        <div class="card-body recipe-body" id="recipe1-ingredients">
                             <ul style="list-style: none;">
                                 <li>2<sup>1</sup>&frasl;<sub>4</sub> cups Flour</li>
                                 <li>1 tsp. Baking Soda</li>
@@ -82,7 +82,7 @@
                     </div>
                     <div class="card">
                         <div class="card-header"><h3>Directions</h3></div>
-                        <div class="card-body recipe-body">
+                        <div class="card-body recipe-body" id="recipe1-directions">
                             <div>
                                 <ol>
                                     <li>Preheat oven to 375<sup>&deg;</sup>F</li>

@@ -97,11 +97,6 @@ img {
 }
 
 /* Add page css */
-button.add {
-    float: right;
-    margin-top: 1rem
-}
-
 .add-header {
     display: inline-block;
     padding: 1rem !important;
@@ -129,8 +124,11 @@ button.add {
     min-height: 200px;
 }
 
-#add-button {
-    display: inline-block;
+#button-container {
+    padding-top: 1rem;
+    padding-bottom: 3rem;
+    justify-content: center;
+    display: flex;
 }
 
 .card-container {
@@ -144,10 +142,6 @@ button.add {
 
 h2 {
     padding-top: 1rem;
-}
-
-button .left-button {
-    float: inline-end;
 }
 
 @media (max-height: 600px) {
