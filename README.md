@@ -370,3 +370,9 @@ console.log(obj, json, objFromJson);
 // {"a":2, "b":"crockford"}
 // {a: 2, b: 'crockford'}
 ```
+
+## Things I learned from Startup Javascript:
+
+You can link several js scripts to one html for functionality. I learned how to make a search bar!! Which I am pretty stoked about. When your looping through an array, it's important to use a for of loop so that you can loop through the actual values in the array instead of the indices of those values. I had forgotten about that. I also learned how to take input values and split them by a new line character, and then stick them into my html. 
+
+As far as I am aware, I think most of my application requires service implementation, so that people can save and access there recipes. Since we haven't learned that quite yet, my app isn't super functional. However, I wrote up some mock functions to utilize when we get there so that my app actually serves a purpose eventually. 
