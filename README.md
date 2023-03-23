@@ -381,8 +381,6 @@ As far as I am aware, I think most of my application requires service implementa
 
 URL syntax: 
 
-
-
 The only required parts are the scheme and the domain name.
 
 - Scheme: The protocol required to ask for teh resource. For web apps, usually HTTPS.
@@ -429,3 +427,29 @@ Common verbs:
 SOP: Same Origin Policy: only allows JavaScript to make requests to a domain if it is the same domain that the user is currently viewing
 
 CORS: Cross Origin Resource Sharing (CORS): allows the client to specify the origin of a request and then let the server respond with what origins are allowed.
+
+## Things I learned from Simon Service:
+
+The web applications files are loaded on the browser. This is simply the front-end of the application. The back-end is the "service" that is hosted on the server in Ohio. This is doing all the endpoints and things to send to the front-end. The Node.js works with the Middleware that allows you to host your front-end files.
+
+Express middleware:
+
+`app.use(express.static('public'));`
+
+```
+app.listen(port, () => {
+  console.log(`Listening on port ${port}`);
+ });
+ ```
+  
+It's important to put basically all of your app files into the public file so that the Middleware can find the static files.
+
+In short the service does two main things:
+
+1. Hosting static files for front-end
+
+2. Hosting endpoints for back-end
+
+Make sure startup port is 4000.
+
+`F5` to debug using node.js
