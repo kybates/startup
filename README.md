@@ -453,3 +453,13 @@ In short the service does two main things:
 Make sure startup port is 4000.
 
 `F5` to debug using node.js
+
+## Things I learned from Simon Database:
+
+`process.env.$VARNAME` retrieves the environment variables you have set in the .zprofile file
+
+To set environment variables you have to edit the `~/.zprofile` with `export $VARNAME=value` then to save the file, do `source ~/.zprofile`
+
+`insertOne` - function to insert a document into database
+
+`find(query, options)` - search for a document
