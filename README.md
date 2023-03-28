@@ -463,3 +463,29 @@ To set environment variables you have to edit the `~/.zprofile` with `export $VA
 `insertOne` - function to insert a document into database
 
 `find(query, options)` - search for a document
+
+## Things I learned from Simon Login
+
+`bcrypt.hash(password, 10` - bcrypt is a package. This code will hash the entered password 10 times.
+
+`bcrypt.compare(req.body.password, user.password)` - compare passwords to authorize user.
+
+`req.body.value` - This retrieves a value from the body of you
+
+`uuid` is also a package creates a unique token for each user when they create an account
+
+`409 error` - this user already exists error
+
+`await collection.insertOne(user);` insert user object into mongodb. When you insert a user object Mongo inserts an id for the object i.e. `{id: user._id}`.
+
+`setAuthCookie(res, user.token)` - return a cookie header with user token 
+
+`GET /api/user/me` - get information about me (the user). Used to authenticate the user.
+
+`req.cookies['token']` 
+
+`401 error` - the user is not authorized
+
+`client.db('simon').collection('user');` create a new collection in the mongo database
+
+When creating the login function, if the user types in an incorrect user, throw a 401 error instead of a 404 error. This way hackers wouldn't know if a user does or does not exist. With any cookie authentication you want to set the following cookie headers: `secure: true;`, `httpOnly: true;`, `sameSite: 'strict';`. Logging out just deletes the cookie from the header. Then they have to log in again. The cookie contains the token.
