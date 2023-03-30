@@ -489,3 +489,11 @@ To set environment variables you have to edit the `~/.zprofile` with `export $VA
 `client.db('simon').collection('user');` create a new collection in the mongo database
 
 When creating the login function, if the user types in an incorrect user, throw a 401 error instead of a 404 error. This way hackers wouldn't know if a user does or does not exist. With any cookie authentication you want to set the following cookie headers: `secure: true;`, `httpOnly: true;`, `sameSite: 'strict';`. Logging out just deletes the cookie from the header. Then they have to log in again. The cookie contains the token.
+
+## Things I learned from Simon Websocket
+
+Peer to peer communication has to happen through the server. Websocket is how the live server works! When we are creating our own server instead of letting Websocket do it, we have to upgrade the http connection ourselves. We use ping/pong protocol to keep the Websocket server running while there are people "alive".
+
+`const {WebSocketServer} = require('ws');`
+
+`socket.send('message')` - this sends a message to the server/client
