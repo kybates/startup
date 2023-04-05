@@ -17,7 +17,7 @@
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet"> 
+        <link href="https://fonts.googleapis.com/css2?family=Kaushan+c&display=swap" rel="stylesheet"> 
         
     </head>
 
@@ -45,16 +45,66 @@
         <main class="container-fluid text-center welcome">
             <div>
                 <h1>Let's get cooking!</h1>
-                <p>Login to start</p>
-                <form method="get" action="recipes.html">
-                    <input type="text" id="name" placeholder="Your name here" />
-                    <button type="submit" class="btn btn-secondary" id="search-button">Login</button>
-                </form>
+                <div id="loginControls" style="display: none">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">@</span>
+                        <input
+                            class="form-control"
+                            type="text"
+                            id="userName"
+                            placeholder="your@email.com"
+                        />
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">🔒</span>
+                        <input
+                            class="form-control"
+                            type="password"
+                            id="userPassword"
+                            placeholder="password"
+                        />
+                    </div>
+                    <button type="button" class="btn btn-secondary" onclick="loginUser()">
+                        Login
+                    </button>
+                    <button type="button" class="btn btn-secondary" onclick="createUser()">
+                        Create
+                    </button>
+                </div>
+                <div id="recipeControls" style="display: none">
+                    <div id="currentUser"></div>
+                    <button type="button" class="btn btn-secondary" onclick="myRecipes()">
+                        My recipes
+                    </button>
+                    <button type="button" class="btn btn-secondary" onclick="logout()">
+                        Logout
+                    </button>
+                </div>
+
+            </div>
+
+            <!-- Error dialog -->
+            <div class="modal fade" id="msgModal" tabindex="-1">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content text-dark">
+                        <div class="modal-body">error message here</div>
+                        <div class="modal-footer">
+                            <button
+                                type="button"
+                                class="btn btn-secondary"
+                                data-bs-dismiss="modal"
+                                >
+                                Close
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </main>
 
 
         <footer class="fixed-bottom text-dark">
+            <script src="login.js"></script>
             <div class="container-fluid">
                 <span class="text-reset">Kylee Bates</span>
                 <a class="text-reset" href="https://github.com/kybates/startup">GitHub</a>
