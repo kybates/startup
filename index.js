@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const DB = require('./database.js');
 
 // The service port. In production the application is statically hosted by the service on the same port.
 const port = process.argv.length > 2 ? process.argv[2] : 3000;
@@ -15,13 +16,15 @@ var apiRouter = express.Router();
 app.use(`/api`, apiRouter);
 
 // GetRecipes
-apiRouter.get('/recipe', (_req, res) => {
+apiRouter.get('/recipe', async (_req, res) => {
+  const recipes = await DB.getRecipes();
   res.send(recipes);
 });
 
 // SubmitRecipe
-apiRouter.post('/recipe', (req, res) => {
-  recipes = updateRecipes(req.body, recipes);
+apiRouter.post('/score', async (req, res) => {
+  DB.addRecipe(req.body);
+  const recipes = await DB.getRecipes();
   res.send(recipes);
 });
 
