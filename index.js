@@ -83,7 +83,7 @@ secureApiRouter.use(async (req, res, next) => {
 });
 
 // GetRecipes
-apiRouter.get('/recipe', async (_req, res) => {
+apiRouter.get('/recipes', async (_req, res) => {
   const recipes = await DB.getRecipes();
   res.send(recipes);
 });

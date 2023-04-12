@@ -40,15 +40,12 @@ await userCollection.insertOne(user);
 return user;
 }
 
+function getCurrentUser() {
+  return localStorage.getItem('userName');
+}
+
 // Add a recipe to the user's account.
-function addRecipe(recipeName, summary, ingredients, directions, userName) {
-    const recipe = {
-        user: userName,
-        name: recipeName,
-        summary: summary,
-        ingredients: ingredients,
-        directions: directions 
-    }
+function addRecipe(recipe) {
     recipeCollection.insertOne(recipe);
   }
 
@@ -58,9 +55,10 @@ function getRecipes(userName) {
     const options = {
       sort: {name: 1},
     };
-    const cursor = scoreCollection.find(query, options);
+    const cursor = recipeCollection.find(query, options);
     return cursor.toArray();
 }
+
 
 module.exports = {
 getUser,
