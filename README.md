@@ -497,3 +497,17 @@ Peer to peer communication has to happen through the server. Websocket is how th
 `const {WebSocketServer} = require('ws');`
 
 `socket.send('message')` - this sends a message to the server/client
+
+## Things I learned from Simon-React
+
+`npx create-react-app react-template`
+
+`npm uninstall web-vitals`
+
+`start` - used for debugging 
+
+`build` - actually for deploying the web app
+
+Instead of `<a class='' href=''>Name</a>` use `<NavLink className='' to=''>Name</NavLink>`
+
+Footers and headers are represented by the parent. Basically we just need to go grab the `<main>` elements from each of our pages and put them into an associated .jsx file. There is just a little adjustment from the js syntax to jsx. We use state variables a lot.
