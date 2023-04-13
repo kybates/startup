@@ -40,50 +40,6 @@
 //     }
 // }
 
-// function insertCard() {
-//     const recipeName = document.getElementById('name-input').value;
-//     const description = document.getElementById('description-input').value;
-//     const newChild = document.createElement('div');
-//     newChild.innerHTML = `<pre><div class="card">
-//     <a class="card-block stretched-link text-decoration-none text-dark" href="add.html">
-//         <img src="add.png" class="card-img-top" alt="...">
-//         <div class="card-body">
-//         <h5 class="card-title">${recipeName}</h5>
-//         <p class="card-text">${description}</p>
-//         </div>
-//     </a>
-//     </div>
-//     </pre>`;
-  
-//     const parentElement = document.querySelector("recipe-card-container");
-//     parentElement.appendChild(newChild);
-//   }
-  
-// // This function will be created and implemented after we cover the necessary skills in class.
-// // For now it changes the add recipe page itself, but doesn't add a recipe to the person's account.
-// function addRecipe() {
-//     addRecipeName();
-//     addDescription();
-//     addIngredients();
-//     addDirections();
-//     insertCard();
-// 
-
-// function getRecipeName() {
-//     return document.getElementById('name-input').value;
-// }
-
-// function getDescription() {
-//     return document.getElementById('description-input').value;
-// }
-
-// function getIngredients() {
-//     return document.getElementById('ingredients-input').value;
-// }
-
-// function getDirections() {
-//     return document.getElementById('directions-input').value;
-// }
 
 function getCurrentUser() {
     return localStorage.getItem('userName');
@@ -108,6 +64,7 @@ async function saveRecipe() {
       // Store what the service gave us as the high scores
       const recipes = await response.json();
       localStorage.setItem('recipes', JSON.stringify(recipes));
+      window.location.href = 'recipes.html';
     } catch {
       // If there was an error then just track scores locally
       this.updateRecipesLocal(newRecipe);

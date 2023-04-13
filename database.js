@@ -40,9 +40,6 @@ await userCollection.insertOne(user);
 return user;
 }
 
-function getCurrentUser() {
-  return localStorage.getItem('userName');
-}
 
 // Add a recipe to the user's account.
 function addRecipe(recipe) {
@@ -50,12 +47,10 @@ function addRecipe(recipe) {
   }
 
 // Get the recipes associated to the user.
-function getRecipes(userName) {
-    const query = {user: { userName }};
-    const options = {
-      sort: {name: 1},
-    };
-    const cursor = recipeCollection.find(query, options);
+function getRecipes(user) {
+    console.log(user);
+    const query = { user: user };
+    const cursor = recipeCollection.find(query);
     return cursor.toArray();
 }
 
