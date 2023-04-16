@@ -47,10 +47,8 @@ function addRecipe(recipe) {
   }
 
 // Get the recipes associated to the user.
-function getRecipes(user) {
-    console.log(user);
-    const query = { user: user };
-    const cursor = recipeCollection.find(query);
+function getRecipes() {
+    const cursor = recipeCollection.find();
     return cursor.toArray();
 }
 
@@ -62,3 +60,4 @@ createUser,
 addRecipe, 
 getRecipes
 };
+
