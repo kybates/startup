@@ -50,11 +50,6 @@
                     <div class="card-header add-header" id="recipeName">
                         <form method="get">
                             <input type="text" class="form-control" id="name-input" placeholder="Recipe name"/>
-                            <!-- <div>
-                                <button class="btn btn-secondary material-symbols-outlined add" onclick="addRecipeName()">
-                                    add
-                                </button>
-                            </div> -->
                         </form>
                     </div>
                     <div class="card-body" id="recipe-description">
@@ -70,11 +65,6 @@
                             <form method="get">
                                 <textarea class="form-control" id="ingredients-input" 
                                 placeholder="Add ingredients here.&#10;Place each ingredient on a separate line."></textarea>
-                                <!-- <div>
-                                    <button class="btn btn-secondary material-symbols-outlined add" onclick="addIngredients()">
-                                        add
-                                    </button>
-                                </div> -->
                             </form>
                         </div>
                     </div>
@@ -86,15 +76,12 @@
                             <form method="get">
                                 <textarea class="form-control" id="directions-input"
                                 placeholder="Add steps here.&#10;Place each step on a separate line.&#10;Do not include the number of each step."></textarea>
-                                <!-- <button class="btn btn-secondary material-symbols-outlined add" onclick="addDirections()">
-                                    add
-                                </button> -->
                             </form>
                         </div>
                     </div>
                 </div>
                 <div id="button-container">
-                    <button class="btn btn-secondary" id="add-button" onclick="saveRecipe()">Add recipe to cookbook</button>
+                    <button class="btn btn-secondary" id="add-button" onclick=saveRecipe()>Add recipe to cookbook</button>
                 </div>
             </div>
         </main>
