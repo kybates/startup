@@ -3,7 +3,7 @@ function getCurrentUser() {
 }
 
 async function saveRecipe() {
-    const currentUser = this.getCurrentUser();
+    const currentUser = getCurrentUser();
     const recipeName = document.getElementById('name-input').value;
     const description = document.getElementById('description-input').value;
     const ingredients = document.getElementById('ingredients-input').value;
@@ -25,6 +25,8 @@ async function saveRecipe() {
       // If there was an error then just track scores locally
       this.updateRecipesLocal(newRecipe);
     }
+    
+    broadcastEvent(currentUser, "createdRecipe", recipeName)
   }
 
   function updateRecipesLocal() {

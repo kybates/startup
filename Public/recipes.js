@@ -57,8 +57,6 @@ async function loadRecipes() {
     recipesEl.appendChild(newChild);
   }
 
-  loadRecipes();
-
 
   async function findRecipe(id) {
     let recipes = [];
@@ -93,9 +91,12 @@ async function loadRecipes() {
     const description = recipe[1].description;
     const ingredients = recipe[1].ingredients;
     const directions = recipe[1].directions;
+    const user = recipe[1].user;
+    const recipeId = recipe[1]._id;
 
     const mainEl = document.querySelector('#main')
-    mainEl.innerHTML = `<div class="container-fluid recipe-name-container">
+    mainEl.innerHTML = `<button class="btn btn-secondary" id="go-back-button" onclick="window.location.href='recipes.html'">Go back to my recipes</button>
+    <div class="container-fluid recipe-name-container">
     <div class="card">
         <div class="card-header add-header" id="recipeName">
             <form method="get">
@@ -131,7 +132,7 @@ async function loadRecipes() {
         </div>
     </div>
     <div id="button-container">
-        <button class="btn btn-secondary" id="add-button" onclick="editRecipe()">Edit recipe</button>
+        <button class="btn btn-secondary" id="add-button" onclick="editRecipe('${recipeId}')">Edit recipe</button>
     </div>
 </div>`;
 
@@ -139,6 +140,7 @@ async function loadRecipes() {
   addDescription(description);
   addIngredients(ingredients);
   addDirections(directions);
+  broadcastEvent(user, "openedRecipe", recipe[1].name)
 }
 
 function addRecipeName(recipeName) {
@@ -178,3 +180,43 @@ function addDirections(directions) {
         directionsOl.appendChild(newStep)
     }
 }
+
+
+function configureWebSocket() {
+  const protocol = window.location.protocol === 'http:' ? 'ws' : 'wss';
+  socket = new WebSocket(`${protocol}://${window.location.host}/ws`);
+  console.log(socket)
+  socket.onopen = (event) => {
+    displayMsg('system', 'session', 'connected');
+  };
+  socket.onclose = (event) => {
+    displayMsg('system', 'session', 'disconnected');
+  };
+  socket.onmessage = async (event) => {
+    const msg = JSON.parse(await event.data.text());
+    if (msg.type === "createdRecipe") {
+      displayMsg('user', msg.from, `created a new recipe: ${msg.value}`);
+    } else if (msg.type === "openedRecipe") {
+      displayMsg('user', msg.from, `is making ${msg.value}` )
+    }
+  };
+}
+
+function displayMsg(cls, from, msg) {
+  console.log(msg)
+  const chatText = document.querySelector('#user-messages');
+  chatText.innerHTML =
+    `<div class="event"><span class="${cls}-event">${from}</span> ${msg}</div>` + chatText.innerHTML;
+}
+
+function broadcastEvent(from, type, value) {
+  const event = {
+    from: from,
+    type: type,
+    value: value,
+  };
+  socket.send(JSON.stringify(event));
+}
+
+loadRecipes();
+configureWebSocket();
