@@ -11,7 +11,7 @@ async function saveRecipe() {
     const newRecipe = { user: currentUser, name: recipeName, description: description, ingredients: ingredients, directions: directions };
 
     try {
-      const response = await fetch('/api/recipe', {
+      const response = await fetch(`/api/recipe`, {
         method: 'POST',
         headers: { 'content-type': 'application/json' },
         body: JSON.stringify(newRecipe),

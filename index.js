@@ -96,6 +96,12 @@ apiRouter.post('/recipe', async (req, res) => {
   res.send(recipes);
 });
 
+// DeleteRecipe
+apiRouter.delete('/recipes/:_id', async (req, res) => {
+  DB.deleteRecipe(req.params._id);
+  const recipes = await DB.getRecipes();
+  res.send(recipes);
+});
 
 // Default error handler
 app.use(function (err, req, res, next) {

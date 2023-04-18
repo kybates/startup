@@ -48,6 +48,11 @@
                 <input type="text" class="form-control" id="searchbar" placeholder="Search a recipe name" name="search" onkeyup="search_recipe()" onkeydown="search_recipe()"/>
             </div>
             <div class="recipe-card-container" id="recipes">
+                <div class="card overflow-auto">
+                    <h3 class="card-title" id="live-updates">Live updates</h3>
+                    <div class="card-body" id="user-messages">
+                    </div>
+                </div>
                 <div class="card">
                     <a class="card-block stretched-link text-decoration-none text-dark" href="add.html">
                         <img src="assets/add.png" class="card-img-top" alt="...">
@@ -57,7 +62,22 @@
                         </div>
                     </a>
                 </div>
-                <div class="card" id="user-messages">
+            </div>
+
+            <div class="modal fade" id="deleteModal" tabindex="-1">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content text-dark">
+                        <div class="modal-body">error message here</div>
+                        <div class="modal-footer">
+                            <button
+                                type="button"
+                                class="btn btn-secondary"
+                                data-bs-dismiss="modal"
+                                >
+                                Confirm deletion
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </main>

@@ -1,4 +1,4 @@
-const {MongoClient} = require('mongodb');
+const {MongoClient, ObjectId} = require('mongodb');
 const bcrypt = require('bcrypt');
 const uuid = require('uuid');
 
@@ -52,6 +52,10 @@ function getRecipes() {
     return cursor.toArray();
 }
 
+function deleteRecipe(recipeId) {
+    const query = { _id: new ObjectId(recipeId) }
+    recipeCollection.deleteOne(query);
+}
 
 
 module.exports = {
@@ -59,5 +63,6 @@ getUser,
 getUserByToken,
 createUser,
 addRecipe, 
-getRecipes
+getRecipes,
+deleteRecipe
 };

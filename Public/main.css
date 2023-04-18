@@ -123,7 +123,7 @@ img {
     min-height: 200px;
 }
 
-#button-container {
+.button-container {
     padding-top: 1rem;
     padding-bottom: 3rem;
     justify-content: center;
@@ -150,8 +150,18 @@ h2 {
 
 .event {
     margin-left: 10px;
-    margin-top: 10px;
 }
+
+#live-updates {
+    color: #1D658D;
+    margin: 1rem
+}
+
+.user-event {
+    color: #1D658D;
+    font-weight: bold;
+}
+
 
 @media (max-height: 600px) {
     header {

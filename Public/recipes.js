@@ -97,7 +97,7 @@ async function loadRecipes() {
     const mainEl = document.querySelector('#main')
     mainEl.innerHTML = `<button class="btn btn-secondary" id="go-back-button" onclick="window.location.href='recipes.html'">Go back to my recipes</button>
     <div class="container-fluid recipe-name-container">
-    <div class="card">
+      <div class="card">
         <div class="card-header add-header" id="recipeName">
             <form method="get">
                 <input type="text" class="form-control" id="name-input" placeholder="Recipe name"/>
@@ -106,10 +106,10 @@ async function loadRecipes() {
         <div class="card-body" id="recipe-description">
           <input type="text" class="form-control" id="description-input" placeholder="Write a brief description of your recipe here."/>
         </div>
+      </div>
     </div>
+
     <div class="card-container">
-
-
         <div class="card">
             <div class="card-header"><h3>Ingredients</h3></div>
             <div class="card-body" id="ingredientsCard">
@@ -131,10 +131,12 @@ async function loadRecipes() {
             </div>
         </div>
     </div>
-    <div id="button-container">
-        <button class="btn btn-secondary" id="add-button" onclick="editRecipe('${recipeId}')">Edit recipe</button>
-    </div>
-</div>`;
+
+    <div class="button-container">
+      <button type="button" class="btn btn-secondary" onclick="deleteRecipe('${recipeId}')">
+        Delete recipe
+      </button>
+    </div>`;
 
   addRecipeName(recipeName);
   addDescription(description);
@@ -205,8 +207,7 @@ function configureWebSocket() {
 function displayMsg(cls, from, msg) {
   console.log(msg)
   const chatText = document.querySelector('#user-messages');
-  chatText.innerHTML =
-    `<div class="event"><span class="${cls}-event">${from}</span> ${msg}</div>` + chatText.innerHTML;
+  chatText.innerHTML = chatText.innerHTML + `<div class="event"><span class="${cls}-event">${from}</span> ${msg}</div>`;
 }
 
 function broadcastEvent(from, type, value) {
@@ -217,6 +218,12 @@ function broadcastEvent(from, type, value) {
   };
   socket.send(JSON.stringify(event));
 }
+
+async function deleteRecipe(recipeId) {
+  const response = fetch(`/api/recipes/${recipeId}`, {
+  method: 'DELETE',
+}).then(window.location.href = 'recipes.html');
+};
 
 loadRecipes();
 configureWebSocket();
