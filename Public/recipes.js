@@ -133,7 +133,7 @@ async function loadRecipes() {
     </div>
 
     <div class="button-container">
-      <button type="button" class="btn btn-secondary" onclick="deleteRecipe('${recipeId}')">
+      <button type="button" class="btn btn-danger" onclick="deleteRecipe('${recipeId}')">
         Delete recipe
       </button>
     </div>`;
