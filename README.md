@@ -511,3 +511,17 @@ Peer to peer communication has to happen through the server. Websocket is how th
 Instead of `<a class='' href=''>Name</a>` use `<NavLink className='' to=''>Name</NavLink>`
 
 Footers and headers are represented by the parent. Basically we just need to go grab the `<main>` elements from each of our pages and put them into an associated .jsx file. There is just a little adjustment from the js syntax to jsx. We use state variables a lot.
+
+## Things I learned from Startup Service
+
+Service endpoints aren't actually as scary as they seem. 
+
+In order to create a query using the `_id` given to each object when put into the mongodb, you have to do the following: `const query = { _id: new ObjectId(recipeId) }`. You also have to make sure you import `ObjectId` from mongodb at the top of your js file. 
+
+For some reason, you can straight up just return the response from a fetch call (or if you can return pieces of it I didn't figure out how). You have to just pass the response into other functions to be utilized and displayed.
+
+Debugging the front end can be done in the browser using F5. Debugging the back end is done in visual studio code. You can also just run `node index.js` in the terminal. It will give you console outputs there as well. 
+
+`req.params.variable` vs `req.body` - The first is useful when you are using a variable the route path and then you want to pass that into the database function to query using that parameter. The second is also useful when you have a JSON object and want to access one of the values for a key. Basically they're both useful.
+
+It's really important to have all the necessary packages installed in your development environment because if you don't have thenm installed, your web app will explode if you don't. 
