@@ -525,3 +525,28 @@ Debugging the front end can be done in the browser using F5. Debugging the back 
 `req.params.variable` vs `req.body` - The first is useful when you are using a variable the route path and then you want to pass that into the database function to query using that parameter. The second is also useful when you have a JSON object and want to access one of the values for a key. Basically they're both useful.
 
 It's really important to have all the necessary packages installed in your development environment because if you don't have thenm installed, your web app will explode if you don't. 
+
+## Extra notes for the final
+
+### From the Kahoot
+
+Cookies allow a server to store data on the client
+
+Content-type, host, and cookie are standard HTTP headers. Language is not. 
+
+You can use fetch in front-end and back-end code. 
+
+Injecting HTML into JavaScript, componentizing HTML, and allowing for composability of HTML are purposes of JSX. Combining CSS, HTML, and JavaScript is not. The JSX does not itself contain CSS. 
+
+A linux daemon can fork other processes, starts when the comptuer is rebooted, executes independent of a user, PM2 is an example of one. 
+
+`React.userEffect(()=> updateX(D), [v]);`
+
+Port 80 is reserved for HTTP, Port SSH is 22, HTTPS is 443
+
+HTTP status codes:
+- 100: informational
+- 200: success
+- 300: content redirects or caching
+- 400: client errors
+- 500: server errors
