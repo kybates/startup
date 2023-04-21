@@ -550,3 +550,9 @@ HTTP status codes:
 - 300: content redirects or caching
 - 400: client errors
 - 500: server errors
+
+Example code:
+
+<img width="296" alt="Screen Shot 2023-04-21 at 11 16 58 AM" src="https://user-images.githubusercontent.com/123604267/233696706-5380e66e-2fe5-40e5-903d-cad36fb5e9da.png">
+
+Component A initially display tacofish
